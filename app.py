@@ -190,16 +190,20 @@ with st.expander("Summary Table"):
     st.write(sub_category_Year.style.background_gradient(cmap = "Blues"))
 
 # create a scatter plot
+# create a scatter plot
 data1 = px.scatter(filtered_df, x="Sales", y="Profit", size="Quantity")
+
 data1.update_layout(
     title=dict(
         text="A scatter plot showing the relationship between Profit and Sales",
         font=dict(size=20)
     ),
-    xaxis=dict(title="Sales", titlefont=dict(size=19)),
-    yaxis=dict(title="Profit", titlefont=dict(size=19))
+    xaxis=dict(title=dict(text="Sales", font=dict(size=19))),
+    yaxis=dict(title=dict(text="Profit", font=dict(size=19)))
 )
+
 st.plotly_chart(data1, use_container_width=True)
+
 with st.expander("View Data"):
     st.write(filtered_df.iloc[:500,1:20:2].style.background_gradient(cmap = "YlOrRd"))
 
