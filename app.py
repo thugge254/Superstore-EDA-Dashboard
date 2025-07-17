@@ -191,9 +191,12 @@ with st.expander("Summary Table"):
 
 # create a scatter plot
 data1 = px.scatter(filtered_df, x="Sales", y="Profit", size="Quantity")
-data1["layout"].update(title = "A scatter plot showing the relationship between Profit and Sales",
-                       titlefont = dict(size = 20), xaxis = dict(title = "Sales", titlefont = dict(size = 19)),
-                       yaxis = dict(title = "Profit", titlefont = dict(size = 19)))
+data1.update_layout(
+    title="A scatter plot showing the relationship between Profit and Sales",
+    title_font=dict(size=20),
+    xaxis=dict(title="Sales", titlefont=dict(size=19)),
+    yaxis=dict(title="Profit", titlefont=dict(size=19))
+)
 st.plotly_chart(data1, use_container_width=True)
 with st.expander("View Data"):
     st.write(filtered_df.iloc[:500,1:20:2].style.background_gradient(cmap = "YlOrRd"))
