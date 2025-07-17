@@ -16,7 +16,6 @@ if f1 is not None:
     st.write(filename)
     df = pd.read_excel(filename, engine='xlrd')
 else:
-    os.chdir(r"C:\Users\Moses\Dashboard in Python\SuperStore Dashboard")
     df = pd.read_excel("Superstore.xls", engine='xlrd')
 col1, col2 = st.columns((2))
 df["Order Date"] = pd.to_datetime(df["Order Date"])
