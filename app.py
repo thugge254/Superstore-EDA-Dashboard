@@ -192,8 +192,10 @@ with st.expander("Summary Table"):
 # create a scatter plot
 data1 = px.scatter(filtered_df, x="Sales", y="Profit", size="Quantity")
 data1.update_layout(
-    title="A scatter plot showing the relationship between Profit and Sales",
-    title_font=dict(size=20),
+    title=dict(
+        text="A scatter plot showing the relationship between Profit and Sales",
+        font=dict(size=20)
+    ),
     xaxis=dict(title="Sales", titlefont=dict(size=19)),
     yaxis=dict(title="Profit", titlefont=dict(size=19))
 )
